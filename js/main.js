@@ -39,8 +39,8 @@ window.addEventListener('load', function() {
 
   document.querySelector('.wizard').addEventListener('click', onClickCoat)
   
-  const wizardHands = document.querySelector('#wizard-hands');
-    
+  
+
   
   const maxWirads = 4;
 
