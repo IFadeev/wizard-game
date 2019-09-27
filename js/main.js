@@ -12,9 +12,9 @@ window.addEventListener('load', function() {
   let wizardsList = this.document.querySelector('#similar-wizard-template')
   .content.querySelector('.setup-similar-item');
 
-  const wizardsName = ['Альфред','Хуан', 'Мария', 'Кристофер',
+  const wizardsName = ['Альфред','Хуан', 'Мария', 'Крайст',
   'Ульрих', 'Йенс', 'Люпин', 'Генрих']; 
-  const wizardsSurname = ['Себастьян', 'Мюллер', 'Шмидт', 
+  const wizardsSurname = ['Себас', 'Мюллер', 'Шмидт', 
   'Фишер', 'Вальц', 'Кляйн', 'Шульц'];
   const wizardsCoatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 
   'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)',
