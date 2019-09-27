@@ -1,11 +1,33 @@
 window.addEventListener('load', function() {
-  let userDialog = this.document.querySelector('.setup');
-  userDialog.classList.remove('hidden');
+  // 
+  const setupOpen = this.document.querySelector('.setup-open');
+
+  const userSettings = this.document.querySelector('.setup');
+  
+
+  document.querySelector('.setup-open').addEventListener('click', function(e) {
+    e.preventDefault();
+    userSettings.classList.remove('hidden');
+  });
+
+  userSettings.querySelector('.setup-close').addEventListener('click', function(e) {
+    e.preventDefault();
+    userSettings.classList.toggle('hidden');
+  });
+
+  this.window.addEventListener('keydown', function(e) {
+    if (e.key == 'Escape') {
+      e.preventDefault();
+      if (!userSettings.classList.contains('hidden')) {
+        userSettings.classList.add('hidden');
+      }
+    }
+  });
+
 
   const maxWirads = 4;
 
-  document.querySelector('.setup-similar')
-  .classList.remove('hidden');
+  document.querySelector('.setup-similar').classList.remove('hidden');
 
   let elements = this.document.querySelector('.setup-similar-list');
 
