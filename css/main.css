@@ -581,11 +581,16 @@ input[type=radio]:checked + .review-mark-label {
   cursor: pointer;
 
   z-index: 2;
+
 }
 
 .setup-open-icon:hover {
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
 }
+
+/* .setup-open-icon:focus {
+  outline: 5px solid #2b5cfc;
+} */
 
 .setup-title {
   padding: 20px;
@@ -644,7 +649,10 @@ input[type=radio]:checked + .review-mark-label {
   color: #000;
   cursor: pointer;
 
+  background-color: rgb(137, 161, 253);
+  background-color: rgba(137, 161, 253, 0);
   transform: translateY(-0.3em);
+
 }
 
 .setup-artifacts-shop {

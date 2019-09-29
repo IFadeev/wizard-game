@@ -1,28 +1,35 @@
 window.addEventListener('load', function() {
   // 
   const setupOpen = this.document.querySelector('.setup-open');
-
+  const setupClose = this.document.querySelector('.setup-close');
   const userSettings = this.document.querySelector('.setup');
   
-
-  document.querySelector('.setup-open').addEventListener('click', function(e) {
-    e.preventDefault();
+  const openPopup = () => {
     userSettings.classList.remove('hidden');
-  });
+    document.addEventListener('keydown', onPopupEscPress);
+  }
 
-  userSettings.querySelector('.setup-close').addEventListener('click', function(e) {
-    e.preventDefault();
-    userSettings.classList.toggle('hidden');
-  });
+  const closePopup = () => {
+    userSettings.classList.add('hidden');
+    document.removeEventListener('keydown', onPopupEscPress);
+  }
 
-  this.window.addEventListener('keydown', function(e) {
-    if (e.key == 'Escape') {
-      e.preventDefault();
-      if (!userSettings.classList.contains('hidden')) {
-        userSettings.classList.add('hidden');
+  const onPopupEscPress = () => {
+    window.addEventListener('keydown', function(e) {
+      if (e.key == 'Escape') {
+        e.preventDefault();
+        if (!userSettings.classList.contains('hidden')) {
+          userSettings.classList.add('hidden');
+        }
       }
-    }
-  });
+    });
+  }
+
+  setupOpen.addEventListener('click', openPopup);
+
+  setupClose.addEventListener('click', closePopup);
+
+  
 
 
   const maxWirads = 4;
