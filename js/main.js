@@ -3,7 +3,8 @@ window.addEventListener('load', function() {
   const setupOpen = this.document.querySelector('.setup-open');
   const setupClose = this.document.querySelector('.setup-close');
   const userSettings = this.document.querySelector('.setup');
-  
+  const userNameInput = this.document.querySelector('.etup-user-name');
+
   const openPopup = () => {
     userSettings.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
@@ -12,6 +13,13 @@ window.addEventListener('load', function() {
   const closePopup = () => {
     userSettings.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
+  }
+
+  const onClickCoat = (evt) => {
+    if (evt.target.className.baseVal == 'wizard-coat') {
+      let newColor = generateWiard().coatColor;
+      evt.target.style.fill = newColor;
+    }
   }
 
   const onPopupEscPress = () => {
@@ -29,9 +37,11 @@ window.addEventListener('load', function() {
 
   setupClose.addEventListener('click', closePopup);
 
+  document.querySelector('.wizard').addEventListener('click', onClickCoat)
   
-
-
+  const wizardHands = document.querySelector('#wizard-hands');
+    
+  
   const maxWirads = 4;
 
   document.querySelector('.setup-similar').classList.remove('hidden');
