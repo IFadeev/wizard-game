@@ -594,6 +594,7 @@ input[type=radio]:checked + .review-mark-label {
 
 .setup-title {
   padding: 20px;
+  border-bottom: 2px solid #2F56A8;
 }
 
 .setup-user {
@@ -642,6 +643,7 @@ input[type=radio]:checked + .review-mark-label {
 .setup-close {
   float: right;
 
+  margin-top: 20px;
   top: 20px;
   right: 20px;
 
